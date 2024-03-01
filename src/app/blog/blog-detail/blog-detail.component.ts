@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {Observable, tap} from "rxjs";
 import {BlogDetailDataService} from "./blog-detail-data.service";
@@ -11,7 +11,8 @@ import {AsyncPipe} from "@angular/common";
   templateUrl: './blog-detail.component.html',
   styleUrl: './blog-detail.component.scss',
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ],
   providers: [BlogDetailDataService]
 })

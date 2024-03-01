@@ -1,6 +1,7 @@
 @if (blogDetails$ | async; as blogDetails) {
   <h1>{{blogDetails.title}}</h1>
   <p>{{blogDetails.content}}</p>
+  <button [routerLink]="['/edit-post/1',blogDetails.title]" >Edit Post</button>
 } @else {
   Loading...
 }

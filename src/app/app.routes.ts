@@ -16,6 +16,11 @@ export const routes: Routes = [
       path: 'blogs/:id',
       loadComponent: () => import('./blog/blog-detail/blog-detail.component')
         .then(c => c.BlogDetailComponent)
-    }
+    },
+  {
+    path: 'create-post',
+    loadComponent: () => import('./blog/create-post/create-post.component')
+      .then(c => c.CreatePostComponent)
+  }
     //TODO: Example with child routes
   ];
