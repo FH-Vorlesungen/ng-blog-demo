@@ -3,6 +3,8 @@ import {BlogsDataService} from "./blogs-data.service";
 import {AsyncPipe} from "@angular/common";
 import {CardComponent} from "../../card/card.component";
 import {RouterLink} from "@angular/router";
+import {BlogOverviewContentComponent} from './blog-overview-content/blog-overview-content.component';
+import {Blog} from '../model/blog.model';
 
 @Component({
   selector: 'app-blog-overview',
@@ -10,7 +12,8 @@ import {RouterLink} from "@angular/router";
   imports: [
     AsyncPipe,
     CardComponent,
-    RouterLink
+    RouterLink,
+    BlogOverviewContentComponent
   ],
   templateUrl: './blog-overview.component.html',
   styleUrl: './blog-overview.component.scss',
@@ -23,5 +26,9 @@ export class BlogOverviewComponent {
 
   constructor() {
     this.blogs$ = this.blogsDataService.blogs$;
+  }
+
+  whenDeleteTriggered(blog: Blog) {
+    this.blogsDataService.delete(blog)
   }
 }
