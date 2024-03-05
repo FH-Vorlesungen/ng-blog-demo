@@ -1,0 +1,11 @@
+<form [formGroup]="group">
+  <div class="container">
+    <h1>Edit your post</h1>
+    <label for="title"></label>
+    <input id="title" [formControl]="group['title']">
+    <label for="content"></label>
+    <textarea id="content" [formControl]="group['content']"></textarea>
+  </div>
+</form>
+
+{{group.valueChanges |async|json}}

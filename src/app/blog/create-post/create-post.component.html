@@ -1,0 +1,11 @@
+<form>
+  <div class="container">
+    <h1>Create your Post</h1>
+    <label for="title">Title</label>
+    <input [(ngModel)]="model.title" id="title" name="title">
+    <label for="content">Content</label>
+    <textarea [(ngModel)]="model.content" id="content" name="content" placeholder="Bring your content"></textarea>
+    <button>CREATE</button>
+  </div>
+</form>
+{{ model|json }}
